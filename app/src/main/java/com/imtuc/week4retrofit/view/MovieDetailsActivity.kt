@@ -37,6 +37,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         binding.progressIndicator.visibility = View.INVISIBLE
 
+        listener()
         GetIntent()
 
         moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
@@ -46,6 +47,12 @@ class MovieDetailsActivity : AppCompatActivity() {
 
     private fun GetIntent() {
         movieID = intent.getIntExtra("movieID", 0)
+    }
+
+    private fun listener() {
+        binding.btnMoviedetails.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setViewModel() {
