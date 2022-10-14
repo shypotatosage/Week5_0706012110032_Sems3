@@ -2,4 +2,5 @@
     <string name="app_name">Week4Retrofit</string>
     <string name="nulldata">-</string>
     <string name="img">img</string>
+    <string name="appname">TheMovieDB</string>
 </resources>
