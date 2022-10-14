@@ -46,9 +46,12 @@ class ProductionCompanyAdapter(private val dataSet: List<ProductionCompany>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        Glide.with(viewHolder.itemView.context)
-            .load(Const.IMG_URL + dataSet[position].logo_path)
-            .into(viewHolder.imageView)
+        if (dataSet[position].logo_path != "null") {
+            Glide.with(viewHolder.itemView.context)
+                .load(Const.IMG_URL + dataSet[position].logo_path)
+                .into(viewHolder.imageView)
+        }
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

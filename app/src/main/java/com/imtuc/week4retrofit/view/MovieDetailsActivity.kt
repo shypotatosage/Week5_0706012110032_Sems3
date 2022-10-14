@@ -67,8 +67,16 @@ class MovieDetailsActivity : AppCompatActivity() {
             adapter1 = GenresAdapter(response.genres)
             binding.rvGenre.adapter = adapter1
 
+            var a = ArrayList(response.production_companies)
+
+            for (comp in response.production_companies) {
+                if (comp.logo_path == null) {
+                    a.remove(comp)
+                }
+            }
+
             binding.rvProductioncompany.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            adapter2 = ProductionCompanyAdapter(response.production_companies)
+            adapter2 = ProductionCompanyAdapter(a)
             binding.rvProductioncompany.adapter = adapter2
 
             binding.rvSpokenlanguage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
