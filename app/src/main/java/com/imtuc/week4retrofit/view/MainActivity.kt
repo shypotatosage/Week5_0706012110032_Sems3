@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         moviesViewModel = ViewModelProvider(this).get(MoviesViewModel::class.java)
-        moviesViewModel.getNowPlaying(Const.API_KEY, "en-US", 2)
+        moviesViewModel.getNowPlaying(Const.API_KEY, "en-US", 1)
 
         binding.progressIndicatorMain.visibility = View.VISIBLE
         binding.rvMain.visibility = View.INVISIBLE
