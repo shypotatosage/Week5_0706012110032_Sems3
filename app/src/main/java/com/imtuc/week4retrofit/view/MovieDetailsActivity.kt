@@ -46,7 +46,6 @@ class MovieDetailsActivity : AppCompatActivity() {
 
     private fun GetIntent() {
         movieID = intent.getIntExtra("movieID", 0)
-        Toast.makeText(applicationContext, "Movie ID : $movieID", Toast.LENGTH_SHORT).show()
     }
 
     private fun setViewModel() {
